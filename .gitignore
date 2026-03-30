@@ -4,3 +4,5 @@
 .Ruserdata
 
 hdmetrics/.Rbuildignore
+
+hdmetrics/hdmetrics.Rproj
