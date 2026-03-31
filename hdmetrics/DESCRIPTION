@@ -10,7 +10,7 @@ Authors: c(
     ), 
     person(
       "Abigail", "Foes",
-      email = "agfoes@live.unc.edu",
+      email = "agfoes@unc.edu",
       role = c("aut", "cre")
     )
   )
