@@ -14,11 +14,11 @@ Authors: c(
       role = c("aut", "cre")
     )
   )
-Description: Calculates Uno's C statistic and inverse probability of censoring weighted (IPW) 
+Description: Calculates Uno's C statistic and Kaplan-Meier (KM) adjusted 
     area under the receiver operating characteristic curve (AOC) for survival models
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
     survival
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
