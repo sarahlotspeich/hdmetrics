@@ -6,3 +6,9 @@
 hdmetrics/.Rbuildignore
 
 hdmetrics/hdmetrics.Rproj
+
+
+# abby ignores
+*.Rproj
+*.tar.gz
+.DS_Store
