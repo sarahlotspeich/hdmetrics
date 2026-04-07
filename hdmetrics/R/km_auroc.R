@@ -32,7 +32,7 @@ km_auroc <- function(evaluate_at, time, event, log_risk, data) {
   cut_vals <- sort(unique(marker)) # sort the unique log risk values
   n_cuts <- length(cut_vals)
   TP <- numeric(n_cuts) # true positive allocation
-  FP <- numeric(n_cute) # false positive allocation
+  FP <- numeric(n_cuts) # false positive allocation
   
   # loop over cutpoints  from unique log risk values
   for (k in seq_len(n_cuts)) {
