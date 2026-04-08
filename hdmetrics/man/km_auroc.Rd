@@ -7,7 +7,7 @@
 km_auroc(evaluate_at, time, event, log_risk, data)
 }
 \arguments{
-\item{evaluate_at}{scalar or vector, numeric times at which Uno's C will be calculated.}
+\item{evaluate_at}{scalar, vector, numeric times at which Uno's C will be calculated.}
 
 \item{time}{string variable name, either time to event or end of follow-up.}
 
