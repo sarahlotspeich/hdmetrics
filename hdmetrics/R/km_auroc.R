@@ -14,26 +14,24 @@
 #'
 km_auroc <- function(evaluate_at, time, event, log_risk, data) {
   
-  Stime <- data[, time]
-  event <- data[, event]
-  marker <- data[, log_risk]
+  Stime  <- as.numeric(data[[time]])
+  status <- as.numeric(data[[event]])
+  marker <- as.numeric(data[[log_risk]])
   
-  # marginal survival at "evaluate_at"
-  km_form = as.formula(paste0("Surv(time =", time, ", event = (1 - ", event, ")) ~ 1"))
-  km_fit = survfit(formula = km_form,
-                   data = data)
+  # marginal KM fit
+  km_fit <- survfit(Surv(Stime, status) ~ 1)
   
   all_time_km_auroc <- sapply(
-    X = evaluate_at,
+    X   = evaluate_at,
     FUN = single_time_km_auroc,
-    km_fit = km_fit,
-    marker = marker,
-    Stime = Stime,
-    event = event
+    km_fit  = km_fit,
+    marker  = marker,
+    Stime   = Stime,
+    event   = status
   )
   
-  
-  return(data.frame(x = evaluate_at,
-                    auc = all_time_km_auroc))
-  
+  return(data.frame(
+    time = evaluate_at,
+    auc  = all_time_km_auroc
+  ))
 }
