@@ -23,11 +23,11 @@ km_auroc <- function(evaluate_at, time, event, log_risk, data) {
   
   all_time_km_auroc <- sapply(
     X   = evaluate_at,
-    FUN = single_time_km_auroc,
+    FUN = single_time_km_auroc_prodlim,
     km_fit  = km_fit,
     marker  = marker,
     Stime   = Stime,
-    event   = status
+    status   = status
   )
   
   return(data.frame(
