@@ -1,5 +1,5 @@
 
-single_time_km_auroc <- function(km_fit, evaluate_at, marker, Stime, status) {
+single_time_km_auroc <- function(km_fit, evaluate_at, marker, Stime, event) {
   
   km_step <- function(fit, t) {
     idx <- which(fit$time <= t)
@@ -27,7 +27,7 @@ single_time_km_auroc <- function(km_fit, evaluate_at, marker, Stime, status) {
       next
     }
     
-    km_c <- survfit(Surv(Stime[in_group], status[in_group]) ~ 1)
+    km_c <- survfit(Surv(Stime[in_group], event[in_group]) ~ 1)
     S_t_c <- km_step(km_c, evaluate_at) # survival given log-risk is greater than cut point
     
     TP[k] <- (p_c - p_c*S_t_c) / F_t
