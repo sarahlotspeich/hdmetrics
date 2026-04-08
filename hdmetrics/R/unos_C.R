@@ -54,7 +54,7 @@ unos_C = function(evaluate_at, time, event, log_risk, data) {
   weights = weights / sum(weights)
 
   # Summarize Uno's C global values and combine with time-specific data
-  all_time_uno_C = weighted.mean(
+  weighted_uno_c = weighted.mean(
     x = all_time_uno_C,
     w = weights,
     na.rm = TRUE)
@@ -64,7 +64,7 @@ unos_C = function(evaluate_at, time, event, log_risk, data) {
     list(
       tv_unos_c = data.frame(x = evaluate_at,
                              C = all_time_uno_C),
-      global_unos_c = all_time_uno_C
+      global_unos_c = weighted_uno_c
     )
   )
 }
