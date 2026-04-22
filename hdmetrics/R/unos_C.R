@@ -48,7 +48,7 @@ unos_C = function(evaluate_at, time, event, log_risk, data) {
   weights = sapply(
     X = evaluate_at,
     FUN = function(t) {
-      sum(data[, time] == t & data[, event] == 1)
+      sum(data[, time] <= t & data[, event] == 1)
       }
     )
   weights = weights / sum(weights)
